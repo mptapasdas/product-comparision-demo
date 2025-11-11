@@ -1,0 +1,80 @@
+/* Main container for the entire component */
+.comparison-container {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* 1. Product Header Section */
+/* This container has the master scrollbar */
+.product-header-container {
+  overflow-x: auto;
+  /* We can hide the scrollbar visually if desired, but for clarity, we'll leave it */
+}
+
+.product-names {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-cell {
+  flex: 0 0 150px; /* Each product column has a fixed width */
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  background-color: #f8f9fa;
+  border-right: 1px solid #e9ecef;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2. Attributes Section */
+/* This container allows vertical scrolling through the attribute groups */
+.attributes-container {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.attribute-group {
+  border-top: 1px solid #dee2e6;
+}
+
+/* This is the fixed row showing the attribute name */
+.attribute-title {
+  padding: 16px 12px;
+  font-weight: 600;
+  background-color: #f1f3f5;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+}
+
+/* This wrapper hides the overflow of the scrolling values content */
+.values-row-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* This content is moved via 'transform' to simulate scrolling */
+.values-row-content {
+  display: flex;
+  flex-direction: row;
+  /* A slight transition can make the synced scroll feel smoother */
+  transition: transform 0.05s linear;
+}
+
+.value-cell {
+  flex: 0 0 150px; /* MUST match the .product-cell width */
+  padding: 12px 8px;
+  text-align: center;
+  border-right: 1px solid #e9ecef;
+  background-color: #fff;
+  color: #495057;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attribute-group:not(:last-child) .values-row-wrapper {
+   border-bottom: 1px solid #e9ecef;
+}
